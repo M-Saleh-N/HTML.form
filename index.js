@@ -27,11 +27,7 @@ lastName.addEventListener("change", (e) => {
     console.log(e.target.value)
 })
 
-email.addEventListener("change", (e) => {
-    const name = e.target.value
-    details.email = name
-    console.log(e.target.value)
-})
+
 
 phoneNumber.addEventListener("change", (e) => {
     const phoneNumber = e.target.value
