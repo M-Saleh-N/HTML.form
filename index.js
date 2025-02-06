@@ -12,6 +12,7 @@ let details = {
 
 const firstName = document.getElementById("firstName")
 const lastName = document.getElementById("lastName")
+const email = document.getElementById("Email")
 const submitBtn = document.getElementById("submitBtn")
 
 firstName.addEventListener("change", (e) => {
@@ -23,6 +24,12 @@ firstName.addEventListener("change", (e) => {
 lastName.addEventListener("change", (e) => {
     const name = e.target.value
     details.lastName = name 
+    console.log(e.target.value)
+})
+
+email.addEventListener("change", (e) => {
+    const name = e.target.value
+    details.email = name
     console.log(e.target.value)
 })
 
