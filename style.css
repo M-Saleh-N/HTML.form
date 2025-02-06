@@ -12,3 +12,12 @@ div {
   box-shadow: 0 9px 10px rgba(0, 0, 0, 0.1);
   width: 500px;
 }
+
+input {
+  width: 100%;
+  padding: 8px;     /*inside the filling*/
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
