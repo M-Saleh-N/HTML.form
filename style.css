@@ -5,3 +5,10 @@ body {
   height: 100vh;
   margin: 0;
 }
+
+div {
+  background: #868383;
+  padding: 20px;
+  box-shadow: 0 9px 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+}
