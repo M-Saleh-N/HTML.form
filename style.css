@@ -21,3 +21,15 @@ input {
   border-radius: 5px;
   font-size: 16px;
 }
+
+button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
