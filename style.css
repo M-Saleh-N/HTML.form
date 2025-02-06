@@ -1,44 +1,9 @@
 body {
-  background-image: url(./Images/bg-img.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   margin: 0;
 }
-h1 {
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Josefin Sans", serif;
-}
-label[for="acceptTerms"] {
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Josefin Sans", serif;
-}
-input[type="checkbox"] {
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-}
-#submitButton {
-  font-family: "Josefin Sans", serif;
-  width: 300px;
-  height: 30px;
-  background-color: #348eb1b7;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-}
-#con1 > div {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
