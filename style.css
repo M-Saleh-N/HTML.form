@@ -40,10 +40,10 @@ button:hover {
   background-color: #0056b3;
 }
 
-.alert-on-massage {
+.alert-on-message {
   display: block;
 }
 
-.alert-off-massage {
+.alert-off-message {
   display: none;
 }
