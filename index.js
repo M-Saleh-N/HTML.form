@@ -16,6 +16,8 @@ const lastName = document.getElementById("lastName")
 const email = document.getElementById("email")
 const password = document.getElementById("password")
 const confirmPassword = document.getElementById("confirmPassword")
+const alertSpan= document.getElementById("alert-password")
+
 
 
 firstName.addEventListener("change", (e) => {
@@ -74,4 +76,8 @@ submitBtn.addEventListener("click", () => {
     } else {
         alert("Passwords do not match")
     }
+
+    alertSpan.classList.remove("alert-off-message")
+    alertSpan.classList.add("alert-on-message")
+    // console.log(alertSpan)
 })
