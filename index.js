@@ -60,10 +60,10 @@ function validatePassword(str1, str2) {
     // Confirm password and confirm password are the same
     // return a boolean if the password match
     if(str1 === str2){
-      alert("Passwords Match")
+      return true
     }
     else{
-      alert("Passwords Don't Match")
+      return false
     }
 }
 // Style your HTML FORM!!!!
@@ -74,10 +74,11 @@ submitBtn.addEventListener("click", () => {
     if (isValidated) {
         window.location.href = "/dashboard.html"
     } else {
-        alert("Passwords do not match")
+        alertSpan.classList.remove("alert-off-message")
+        alertSpan.classList.add("alert-on-message")
     }
 
-    alertSpan.classList.remove("alert-off-message")
-    alertSpan.classList.add("alert-on-message")
-    // console.log(alertSpan)
+    // alertSpan.classList.remove("alert-off-message")
+    // alertSpan.classList.add("alert-on-message")
+   
 })
