@@ -66,8 +66,12 @@ function validatePassword(str1, str2) {
 }
 // Style your HTML FORM!!!!
 submitBtn.addEventListener("click", () => {
-    const { firstName, lastName, email, password, phoneNumber,
-confirmPassword, agreeTerms} = details
-      console.log(details)
-    validatePassword(password, confirmPassword)
+    const { firstName, lastName, email, password, phoneNumber, confirmPassword, agreeTerms} = details
+    const isValidated = validatePassword(password, confirmPassword)
+    
+    if (isValidated) {
+        window.location.href = "/dashboard.html"
+    } else {
+        alert("Passwords do not match")
+    }
 })
