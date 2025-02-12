@@ -9,76 +9,79 @@ let details = {
     confirmPassword: '',
     agreeTerms: false
 }
-
 const firstName = document.getElementById("firstName")
-const submitBtn = document.getElementById("submitBtn")
 const lastName = document.getElementById("lastName")
 const email = document.getElementById("email")
+const phoneNumber = document.getElementById("phoneNumber")
 const password = document.getElementById("password")
 const confirmPassword = document.getElementById("confirmPassword")
-const alertSpan= document.getElementById("alert-password")
+const submitBtn = document.getElementById("submitBtn")
+const alertSpan = document.getElementById("alert-password")
 
-
-
-firstName.addEventListener("change", (e) => {
+firstName.addEventListener("change" , (e) => {
     const name = e.target.value
-    details.firstName = name
+    details.firstName =  name
 })
-
-lastName.addEventListener("change", (e) => {
-  const name = e.target.value
-  details.lastName = name
+lastName.addEventListener("change" , (e) => {
+    const name = e.target.value
+    details.lastName = e.target.value
 })
-
-email.addEventListener("change", (e) => {
-  const email = e.target.value
-  details.email = email
+email.addEventListener("change" , (e) => {
+    const email = e.target.value
+    details.email = e.target.value
 })
-
 phoneNumber.addEventListener("change", (e) => {
-    const phoneNumber = e.target.value
-    details.phoneNumber = phoneNumber
-    // Using regular expression, validate if the number is a valid kenyan number
-    // if it's not, using the alert function, notify the user that the
-    // number is not valid
-})
-// Add event listeners for all remaining input elements and update the
-// details object
-
-password.addEventListener("change", (e) => {
-  const password = e.target.value
-  details.password = password
-})
-
-confirmPassword.addEventListener("change", (e) => {
-  const confirmPassword = e.target.value
-  details.confirmPassword = confirmPassword
-})
-
-
-function validatePassword(str1, str2) {
-    // Confirm password and confirm password are the same
-    // return a boolean if the password match
-    if(str1 === str2){
-      return true
+    const phone = e.target.value;
+    const phoneNumberRegex = /^(?:\+254|0|254)(7\d{8})$/; 
+    if (phoneNumberRegex.test(phone)) {
+        details.phoneNumber = phone;
+        console.log("The phone number is Valid. Thanks!");
+    } else {
+        alert("The phone number entered is not a Kenyan number, kindly enter a valid phone number");
+        e.target.value = ""; 
     }
-    else{
-      return false
+});
+
+password.addEventListener("change" , (e) => {
+    const password = e.target.value
+    details.password = e.target.value
+})
+confirmPassword.addEventListener("change" , (e) => {
+    const confirmPassword = e.target.value
+    details.confirmPassword = e.target.value
+
+
+})
+
+function validatePassword(password, confirmPassword) {
+    if (password === confirmPassword) {
+        alert("Passwords match.");
+        return true;
+    }
+
+    else {
+        alert("Passwords do not match. Please re-enter.");
+        return false;
     }
 }
-// Style your HTML FORM!!!!
-submitBtn.addEventListener("click", () => {
-    const { firstName, lastName, email, password, phoneNumber, confirmPassword, agreeTerms} = details
-    const isValidated = validatePassword(password, confirmPassword)
-    
-    if (isValidated) {
+
+submitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log(details)
+    let {firstName, lastName, email, phoneNumber, password, confirmPassword, agreeTerms} = details
+    console.log(firstName, lastName, email, phoneNumber, password, confirmPassword, agreeTerms)
+
+    const isValidated = validatePassword(password,confirmPassword)
+
+    if(isValidated) {
         window.location.href = "/dashboard.html"
+
     } else {
         alertSpan.classList.remove("alert-off-message")
-        alertSpan.classList.add("alert-on-message")
+        alertSpan.classList.remove("alert-on-message")
     }
 
-    // alertSpan.classList.remove("alert-off-message")
-    // alertSpan.classList.add("alert-on-message")
-   
-})
+    // console.log("Your for has been submitted successfully!");
+});
+
+// alertSpan.classList.remove("alert-off-message")
