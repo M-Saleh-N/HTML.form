@@ -71,9 +71,13 @@ submitBtn.addEventListener("click", (e) => {
     let {firstName, lastName, email, phoneNumber, password, confirmPassword, agreeTerms} = details
     console.log(firstName, lastName, email, phoneNumber, password, confirmPassword, agreeTerms)
 
-    const isValidated = validatePassword(password,confirmPassword)
+    const isPasswordValidate = validatePassword(password,confirmPassword)
+    const isNameValidate = validateName(firstName, lastName)
+    const isPhoneNumberValidated = validateNumber(phoneNumber)
+    const isEmailValidated= validateEmail(email)
 
-    if(isValidated) {
+
+    if(isPasswordValidated && isEmailValidated) {
         window.location.href = "/dashboard.html"
 
     } else {
